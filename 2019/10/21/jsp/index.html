@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSP 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、myBatis)开发。">
+  <meta name="description" content="课堂笔记10月21号jsp 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、my">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/jsp/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSP 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、myBatis)开发。">
+<meta property="og:description" content="课堂笔记10月21号jsp 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、my">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-21T10:54:26.666Z">
+<meta property="og:updated_time" content="2019-10-21T11:28:33.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="JSP 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、myBatis)开发。">
+<meta name="twitter:description" content="课堂笔记10月21号jsp 梳理回顾   前端开发：HTML、CSS、JS(JavaScript)   企业中前端工程师：使用前端框架(BootStrap/easyUI/VUE/Angular)开发。  后端开发：JavaSE、JSP、JavaWeb(良好的稳定性、健壮性优于其它语言。企业级应用首选之一)   企业中的后端工程师：使用后端框架(SpringMVC/Struts2、Spring、my">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,7 +159,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><ul>
+        <h2 id="课堂笔记10月21号"><a href="#课堂笔记10月21号" class="headerlink" title="课堂笔记10月21号"></a>课堂笔记10月21号</h2><h2 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h2><ul>
 <li><p>梳理回顾 </p>
 </li>
 <li><p>前端开发：HTML、CSS、JS(JavaScript) </p>
@@ -174,14 +174,16 @@
 </ul>
 </li>
 <li><p>C语言:工业控制、嵌入式设备(电磁炉、吸尘器、微波炉。。。)。 </p>
-<h2 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h2><ul>
+</li>
+</ul>
+<ul>
 <li><p>JSP项目是在后台开发框架成熟前使用较多的一种JavaWeb技术，后期会逐渐过度到后台框架。 jvm只能处理 java编译的class文件。 </p>
 </li>
 <li><p>JSP和后台框架 </p>
 </li>
-<li><p>核心技术均为Servlet Servlet在jdk中的包为：javax.servlet.http.HttpServlet。</p>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>1.jsp和servlet的区别和联系：</p>
-</li>
+<li><p>核心技术均为Servlet Servlet在jdk中的包为：javax.servlet.http.HttpServlet。 </p>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p> 1.jsp和servlet的区别和联系：</p>
+<ul>
 <li><p>jsp经编译后就变成了Servlet. (JSP的本质就是Servlet，JVM只能识别java 的类(.class)，不能识别JSP的代码,Web容器将JSP的代码编译成JVM能够识别的java类) </p>
 </li>
 <li><p>jsp更擅长表现于 页面显示,servlet更擅长于逻辑控制</p>
@@ -189,28 +191,26 @@
 <li><p>Servlet中没有内置对象，Jsp中的内置对象都是必须通过 HttpServletRequest对象，</p>
 </li>
 <li><p>HttpServletResponse对象以及HttpServlet对象得到. Jsp是Servlet的一种简化， 使用Jsp只需要完成程序员需要输出到客户端的内容，Jsp中的Java脚本如何镶嵌到一个类中，由Jsp容器 完成。 而Servlet则是个完整的Java类，这个类的Service方法用于生成对客户端的响应。</p>
+</li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <p><strong>2. 联系：</strong> </p>
 </blockquote>
-</li>
-</ul>
-</li>
-</ul>
 <ul>
 <li>JSP是Servlet技术的扩展，本质上就是Servlet的简易方式。JSP编译后是“类servlet”。</li>
 <li>Servlet和JSP最主要的不同点在于：</li>
 <li>Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。（jsp里面是有html标签， servlet没有html标签）<br>而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。(JSP=java类+HTML) </li>
 <li>JSP侧重于视图，Servlet主要用于控制逻辑。(JSP不能脱离Servlet，但Servelet可独立存在) </li>
-<li>Servlet更多的是类似于一个Controller，用来做控制。 <ul>
-<li><h2 id="servlet类中的方法"><a href="#servlet类中的方法" class="headerlink" title="servlet类中的方法"></a>servlet类中的方法</h2></li>
-</ul>
-</li>
+<li>Servlet更多的是类似于一个Controller，用来做控制。 <h2 id="servlet类中的方法"><a href="#servlet类中的方法" class="headerlink" title="servlet类中的方法"></a>servlet类中的方法</h2></li>
 </ul>
 <ul>
 <li>servlet中的方法 </li>
 <li>doGet()方法：用get方式传输网络数据 get方式：明文传参(地址栏显示)、传输数据较小、</li>
 <li>doPost()方法：用post方式传输网络数据 post方式：暗文传参(地址栏不显示)、传输数据较大、</li>
-<li><h2 id="页面跳转方式"><a href="#页面跳转方式" class="headerlink" title="页面跳转方式"></a>页面跳转方式</h2></li>
+</ul>
+<h2 id="页面跳转方式"><a href="#页面跳转方式" class="headerlink" title="页面跳转方式"></a>页面跳转方式</h2><ul>
 <li>页面跳转的方式分类： </li>
 </ul>
 <ol>
@@ -218,15 +218,13 @@
 <blockquote>
 <p>request.getRequestDispatcher(“hello.jsp”).forward(request，response);//页面转发</p>
 </blockquote>
-<ol start="2">
+</li>
 <li><p>重定向：redirect(地址栏URL变化)</p>
 <blockquote>
 <p>response.sendRedirect(“资源的URL”); </p>
 </blockquote>
 </li>
 <li><p>两种跳转方式异同： </p>
-</li>
-</ol>
 </li>
 </ol>
 <ul>
@@ -237,9 +235,8 @@
 <li><p>转发是服务器行为，重定向是客户端行为；</p>
 </li>
 <li><p>转发是浏览器只做了一次访问请求。重定向是浏览器做了至少两次的访问请求；</p>
-<ul>
-<li>转发2次跳转之间传输的信息不会丢失，重定向2次跳转之间传输的信息会丢失（request范围）。</li>
-</ul>
+</li>
+<li><p>转发2次跳转之间传输的信息不会丢失，重定向2次跳转之间传输的信息会丢失（request范围）。</p>
 </li>
 </ul>
 
