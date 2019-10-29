@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="课堂笔记10/29/2019 一、相同点： 1.处理后台逻辑，作为mvc控制；   2.9个内置对象(request、response、session、application、page、out、 config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。 page.s">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/jsp3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课堂笔记10/29/2019 一、相同点： 1.处理后台逻辑，作为mvc控制；   2.9个内置对象(request、response、session、application、page、out、 config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。 page.s">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-29T02:22:33.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="课堂笔记10/29/2019 一、相同点： 1.处理后台逻辑，作为mvc控制；   2.9个内置对象(request、response、session、application、page、out、 config、pageContext、exception)，内置对象作用域：page &amp;lt; request/response &amp;lt; session &amp;lt; application。 page.s">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,139 +154,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jsp3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>课堂笔记10/29/2019</p>
+<h1 id="一、相同点："><a href="#一、相同点：" class="headerlink" title="一、相同点："></a>一、相同点：</h1><ul>
+<li><p>1.处理后台逻辑，作为mvc控制； </p>
+</li>
+<li><p>2.9个内置对象(request、response、session、application、page、out、 config、pageContext、exception)，<br>内置对象作用域：page &lt; request/response &lt; session &lt; application。 page.setAttribute(“username”,”sam”);<br>String id = page.getAttribute(“username”); request.setAttribute(“username”,”sam”);<br>String id = request.getAttribute(“username”); session.setAttribute(“username”,”sam”);<br>String id = session.getAttribute(“username”); application.setAttribute(“username”,”sam”);<br>String id = application.getAttribute(“username”); </p>
+</li>
+<li><p>3.都可用Java语言。</p>
+</li>
+</ul>
+<h1 id="二、不同点："><a href="#二、不同点：" class="headerlink" title="二、不同点："></a>二、不同点：</h1><ul>
+<li><p>1.JSP可作为前端显示页面，Servlet只能作后台控制；</p>
+</li>
+<li><p>2.JSP可内嵌html、EL、JSTL和Java，而Servlet只能有Java； </p>
+</li>
+<li><p>3.JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解) </p>
+</li>
+<li><p>4.JSP常作为小型项目，Servlet常用作 框架类的大型项目；</p>
+</li>
+</ul>
+<h1 id="三-什么是Servlet"><a href="#三-什么是Servlet" class="headerlink" title="三.什么是Servlet"></a>三.什么是Servlet</h1><ul>
+<li><p>Java Servlet 是运行在 Web 服务器或应用服务器上的程序，</p>
+</li>
+<li><p>它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。</p>
+</li>
+<li><p>使用 Servlet，您可以收集来自网页表单的用户输入，呈现来自数据库或者其他源的记录，还可以动态创建网页。</p>
+</li>
+<li><p>Java Servlet 通常情况下与使用 CGI（Common Gateway Interface，公共网关接口）实现的程序可以达到异曲同工的效果。<br>但是相比于 CGI，Servlet 有以下几点优势：<br>性能明显更好。</p>
+</li>
+<li><p>Servlet 在 Web 服务器的地址空间内执行。这样它就没有必要再创建一个单独的进程来处理每个客户端请求。</p>
+</li>
+<li><p>Servlet 是独立于平台的，因为它们是用 Java 编写的。<br>服务器上的 Java 安全管理器执行了一系列限制，以保护服务器计算机上的资源。因此，Servlet 是可信的。</p>
+</li>
+<li><p>Java 类库的全部功能对 Servlet 来说都是可用的。它可以通过 sockets 和 RMI 机制与 applets、数据库或其他软件进行交互。</p>
+<h1 id="四-JSP-简介"><a href="#四-JSP-简介" class="headerlink" title="四.JSP 简介"></a>四.JSP 简介</h1></li>
+<li><p>什么是Java Server Pages?</p>
+</li>
+<li><p>JSP全称Java Server Pages，是一种动态网页开发技术。它使用JSP标签在HTML网页中插入Java代码。标签通常以&lt;%开头以%&gt;结束。 </p>
+</li>
+<li><p>JSP是一种Java servlet，主要用于实现Java web应用程序的用户界面部分。</p>
+</li>
+<li><p>网页开发者们通过结合HTML代码、XHTML代码、XML元素以及嵌入JSP操作和命令来编写JSP。</p>
+</li>
+<li><p>JSP通过网页表单获取用户输入数据、访问数据库及其他数据源，然后动态地创建网页。 </p>
+</li>
+<li><p>JSP标签有多种功能，比如访问数据库、记录用户选择信息、访问JavaBeans组件等，还可以在不同的网页中传递控制信息和共享信息。</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/jsp3/" class="archive-article-date">
-  	<time datetime="2019-10-29T02:07:52.502Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/jsp3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/jsp2/" class="archive-article-date">
-  	<time datetime="2019-10-29T01:03:19.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/jsp/" class="archive-article-date">
-  	<time datetime="2019-10-21T10:19:45.729Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/29/jsp2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/我要成功我就要成功我成功了哈哈哈哈/" class="archive-article-date">
-  	<time datetime="2019-10-10T14:40:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/我要成功我就要成功我成功了哈哈哈哈/">我要成功我就要成功我成功了哈哈哈哈</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T13:46:37.003Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -305,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
