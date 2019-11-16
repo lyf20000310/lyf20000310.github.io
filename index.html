@@ -152,6 +152,251 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/16/jsp7/">通用的  数据库  操作 方法 增删改查</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/16/jsp7/" class="archive-article-date">
+  	<time datetime="2019-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>package com.daqc.demo.dao;</p>
+<p>import java.sql.*;</p>
+<p>/**</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>通用的  数据库  操作 方法 增删改查</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p>引用范例:</p>
+</li>
+<li><p>public static void main(String[] args) throws SQLException {</p>
+</li>
+<li><p>ResultSet rs = executeQuery(“SELECT * FROM user;”, null);</p>
+</li>
+<li><p>while (rs.next()) {</p>
+</li>
+<li><p>System.out.println(rs.getObject(1));</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>Object [] s = {1234560};</p>
+</li>
+<li><p>boolean flag = executeUpdate(“UPDATE <code>user</code> SET password = ?;”,s);</p>
+</li>
+<li><p>System.out.println(flag);</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>/<br>public class DBUtil {<br>  static final String JDBC_DRIVER = “com.mysql.jdbc.Driver”;<br>  static final String URL = “jdbc:mysql://localhost:3306/his”;<br>  static final String USERNAME = “root”;<br>  static final String PASSWORD = “root”;</p>
+<p>  public static Connection connection = null;<br>  public static PreparedStatement pstmt = null;<br>  public static ResultSet rs = null;<br>  /**</p>
+<ul>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>获取连接  返回DriverManager.getConnection(URL,USERNAME,PASSWORD);</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>/<br>public static Connection getConnection() throws SQLException, ClassNotFoundException {<br>  Class.forName(JDBC_DRIVER);<br>  return DriverManager.getConnection(URL,USERNAME,PASSWORD);<br>}<br>/**</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>获取单例连接  返回DriverManager.getConnection(URL,USERNAME,PASSWORD);</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>/<br>public static Connection getOneConnection() throws SQLException, ClassNotFoundException {<br>  if (DBUtil.connection == null) {<pre><code>return getConnection();</code></pre>  } else {<pre><code>return DBUtil.connection;</code></pre>  }<br>}<br>/**</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>给 String sql 语句中的 ? 赋值</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>/<br>public static PreparedStatement createPreParedStatement(String sql,Object[] params) throws SQLException, ClassNotFoundException {<br>  connection = getOneConnection();<br>  pstmt = connection.prepareStatement(sql);<br>  if (params != null) {<pre><code>for (int i = 0; i &lt; params.length; i++) {
+    pstmt.setObject((i+1),params[i]);
+}</code></pre>  }<br>  return pstmt;<br>}<br>/**</li>
+<li>(((通用的增删改)))</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>用法：String sql = “”;  Object[] params = {int id,String name…..};</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>返回：   boolean值 t/f </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>接收：  创建boolean flag = null; </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>使 flag = executeUpdate(String sql,Object[] params);</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>已经自动关闭 if (pstmt!=null) pstmt.close();</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>if (rs!=null) rs.close();</li>
+<li>if (DBUtil.connection!=null) DBUtil.connection.close();</li>
+<li>/<br>public static boolean executeUpdate(String sql,Object[] params) {<br>  try {<pre><code>pstmt = createPreParedStatement(sql, params);
+int count = pstmt.executeUpdate();
+if (count &gt; 0) {
+    return true;
+} else {
+    return false;
+}</code></pre>  } catch (ClassNotFoundException e) {<pre><code>e.printStackTrace();
+return false;</code></pre>  } catch (SQLException e) {<pre><code>e.printStackTrace();
+return false;</code></pre>  } catch (Exception e) {<pre><code>e.printStackTrace();
+return false;</code></pre>  } finally {<pre><code>closeAll(connection, pstmt, rs);</code></pre>  }<br>}<br>/**</li>
+<li>(((通用的查)))                                                </li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>用法：String sql = “select ? from <code>user</code> where id =?”;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>?对应值Object[] params = {String name,int id…..};可为空null</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>返回:  PreparedStatement pstmt = null;类型结果集rs</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>接收： 创建  PreparedStatement pstmt = null;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>使pstmt = executeQuery(String sql,Object[] params)</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>需要调用关闭  DBUtil.closeAll(DBUtil.connection, pstmt, rs);</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li></li>
+<li>/<br>public static ResultSet executeQuery(String sql,Object[] params) {<br>  try {<pre><code>pstmt = createPreParedStatement( sql,params);
+rs = pstmt.executeQuery();
+return rs;</code></pre>  } catch (ClassNotFoundException e) {<pre><code>e.printStackTrace();
+return null;</code></pre>  } catch (SQLException e) {<pre><code>e.printStackTrace();
+return null;</code></pre>  } catch (Exception e) {<pre><code>e.printStackTrace();
+return null;</code></pre>  }<br>//        finally {<br>//            try {<br>//                if (pstmt!=null) pstmt.close();<br>//                if (connection!=null) connection.close();<br>//            } catch (SQLException e) {<br>//                e.printStackTrace();<br>//            }<br>//        }<br>}<br>/**</li>
+</ul>
+</li>
+<li><p>(((关闭数据库连接)))</p>
+</li>
+<li><p>try {</p>
+</li>
+<li><p>if (pstmt!=null) pstmt.close();</p>
+</li>
+<li><p>if (rs!=null) rs.close();</p>
+</li>
+<li><p>if (connection!=null) connection.close();</p>
+</li>
+<li><p>} catch (SQLException e) {</p>
+</li>
+<li><p>e.printStackTrace();</p>
+</li>
+<li><p>}</p>
+</li>
+<li></li>
+<li><p>/<br>  public static void closeAll(Connection connection,Statement pstmt,ResultSet rs) {</p>
+<pre><code>try {
+    if (pstmt!=null) pstmt.close();
+    if (rs!=null) rs.close();
+    if (connection!=null) connection.close();
+} catch (SQLException e) {
+    e.printStackTrace();
+}</code></pre><p>  }</p>
+<p>  public static void main(String[] args) {</p>
+<pre><code>executeQuery(&quot;SELECT * FROM user WHERE userid = 1;&quot;, null);</code></pre><p>  }<br>}</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/16/jsp7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
