@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP-动态网页"><a href="#JSP-动态网页" class="headerlink" title="JSP:动态网页"></a>JSP:动态网页</h1><ul>
+<li>静态和动态的区别与联系：</li>
+</ul>
+<p>1.&lt;%@ include file=” ”%&gt;是指令元素。&lt;jsp:include page=” ”/&gt;是行为元素</p>
+<p>2.最终编译成java文件的数目不同。（从上面的例子可以看出）</p>
+<p>1.静态包含在转换成为java文件的时候将包含文件的内容“复制”到主体文件，然后作为一个整体编译。最终编译为一个java文件。</p>
+<p>2.动态包含是各个jsp文件分别转换，分别编译。最终编程成多个java文件。</p>
+<p>3.执行时间不同</p>
+<blockquote>
+<p>静态包含发生在：JSP—-&gt;java文件阶段。</p>
+</blockquote>
+<blockquote>
+<p>动态包含发生在：执行class文件阶段。动态加入。</p>
+</blockquote>
+<p>4.静态包含在两个文件中不能有相同的变量，动态包含允许。</p>
+<blockquote>
+<p>由于静态包含相当于将包含文件内容直接复制到主体文件中，如果出现相同的变量，就会出现覆盖等问题，导致文件出错。而动态包含相当于调用不同的jsp，变量所在的空间不同，自然不会出现覆盖等现象。</p>
+</blockquote>
+<p>5。无论是动态包含还是静态包含，其request对象都是相同的。也就是同一个request对象。</p>
+<p>6.不同之处</p>
+<blockquote>
+<p>（1）两者格式不同，静态包含：&lt;%@ include file=”文件” %&gt;，而动态包含：<jsp : include page="文件">。 </jsp></p>
+</blockquote>
+<blockquote>
+<p>（2）包含时间不同，静态包含是先将几个文件合并，然后再被编译，缺点就是如果含有相同的标签，会出错。动态包含是页面被请求时编译，将结果放在一个页面。</p>
+</blockquote>
+<blockquote>
+<p>（3）生成的文件不同，静态包含会生成一个包含页面名字的servlet和class文件；而动态包含会各自生成对应的servlet和class文件</p>
+</blockquote>
+<blockquote>
+<p>（4）传递参数不同，动态包含能够传递参数，而静态包含不能 。</p>
+</blockquote>
+<p>7.静态不会随着时间，地点，用户操作而改变，但动态会。</p>
+<h1 id="完全修改jsp复制项目名"><a href="#完全修改jsp复制项目名" class="headerlink" title="完全修改jsp复制项目名"></a>完全修改jsp复制项目名</h1><ul>
+<li>修改这四项:</li>
+</ul>
+<p>eclipse–&gt; 项目 –&gt; 右击 –&gt; 属性 –&gt; Web Project Settings  –&gt; Context root:</p>
+<p>.project—-&gt;    <name>his_v3</name></p>
+<p>.settings–&gt;   org.eclipse.wst.common.component  –&gt; <wb-module deploy-name="his_v3"><br>.settings–&gt;   org.eclipse.wst.common.component  –&gt; <property name="context-root" value="his_v3"></property></wb-module></p>
+<pre><code>java.sql.SQLException: The server time zone value  数据库连接错误</code></pre><p>static final String URL = “jdbc:mysql://localhost:3306/hisuseUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT”;</p>
+<pre><code>jsp页面跳转 request等对象传值容易出现空指针异常,此时应注意是否赋值过</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/06/jsp12/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1341,96 +1428,6 @@ return null;</code></pre>  }<br>//        finally {<br>//            try {<br>//
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/29/jsp3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jsp2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>课堂笔记1028                                                       10/28/2019</p>
-<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h1 id="一、JSP九大内置对象"><a href="#一、JSP九大内置对象" class="headerlink" title="一、JSP九大内置对象"></a>一、JSP九大内置对象</h1><ul>
-<li><p>（一）Request：客户端与服务器的一次请求中封装了用户提交的信息（包裹），该对象可以设置请求转<br>发request.getRequestDispatcher(String URL).forward(request,response)，是服务器行为，是一次请求，<br>所以页面的URL为原始请求处理的响应页面的URL（不是最终的处理请求的响应页面，因为客户端只请求 一次）。</p>
-</li>
-<li><p>（二）Response：对客户的请求做出的响应，向客户端发送数据，该对象可以设置重定向<br>response.sendRedirect(String URL)，是客户端行为，是两次请求，所以页面的URL为二次请求处理的<br>响应页面的URL。</p>
-</li>
-<li><p>（三）Session：该对象是客户端与服务器的一次会话，只要不关闭服务器的所有页面（离开这个服务 器），<br>就只视为一次会话。Session在第一个JSP页面被装载时自动创建，完成会话期管理。<br>当一个客户 首次访问服务器上的一个JSP页面时，JSP 引擎产生一个Session对象，同时分配一个String类型的ID号，<br>JSP引擎同时将这换个ID号发送到客户端，存放在Cookie（要求服务器启用Cookie权限）中，<br>这样 Session对象，直到客户关闭浏览器后，服务器端该客户的Session对象才取消，并且和客户的会话对应关 系消失。<br>当客户重新打开浏览器再连接到该服务器时，服务器为该客户再重新创建一个新的Session对象 拥有新的ID号。<br>常用方法为String getId()获取ID号以及Boolean isNew()判断是否是一个新的客户。 Session可以理解为线程私有的。</p>
-</li>
-<li><p>（四）Application：服务器启动时产生，共享性。</p>
-</li>
-<li><p>（五）Out：Out对象本质是一个输出流，用来向客户端输出数据。Out对象用于各种数据的输出。<br>常用 方法为：<br>out.print()：输出各种类型数据。<br>out.newLine()：输出一个换行符。<br>out.close()：关闭流。</p>
-</li>
-<li><p>（六）Config：配置对象。 </p>
-</li>
-<li><p>（七）Page：页面。 </p>
-</li>
-<li><p>（八）PageContext：页面应用上下文环境。可通过该对象获取依赖于页面上下文环境的Node。</p>
-</li>
-<li><p>（九）Exception：只有在处理异常的网页中可以直接访问exception隐式对象。 </p>
-<h1 id="二、JSP七种传参方式"><a href="#二、JSP七种传参方式" class="headerlink" title="二、JSP七种传参方式"></a>二、JSP七种传参方式</h1></li>
-<li><p>（一）JavaBean：&lt;jsp:useBean id=”XXX” class=”JavaBean的全限定名(page+calssName)” scope=”session” /&gt;</p>
-</li>
-<li><p>（二）Session：session.setAttribute(String key,Object value)/seesion.getAttribute(String key) </p>
-</li>
-<li><p>（三）Application:application.setAttribute(String key,Object value)/application.getAttribute(String key) </p>
-</li>
-<li><p>（四）Request:<br>request.setParater(String key,String value)/request.getParater(String key)<br>request.setAttribute(String key,Object value)/request.getAttribute(String key) </p>
-</li>
-<li><p>（五）JSP动作指令：&lt;jsp:forward/redirect page=”XXX.jsp”&gt; &lt;jsp:param name=”key-x” value=”value-x” /&gt;<br>&lt;jsp:param name=”key-y” value=”value-y” /&gt; &lt;/jsp:forward/redirect&gt; </p>
-</li>
-<li><p>（六）Form表单</p>
-</li>
-<li><p>（七）URL传参：URL.jsp?参数1 的key=参数1的value&amp; 参数n的key=参数n 的value </p>
-<h1 id="三、JSP四个作用域"><a href="#三、JSP四个作用域" class="headerlink" title="三、JSP四个作用域"></a>三、JSP四个作用域</h1></li>
-<li><p>（一）Application：共享、全局、服务器启动时产生，重启服务器销毁。可以包含很多个session。 </p>
-</li>
-<li><p>（二）Session：会话。隔离。生命周期是从用户发起链接服务器至彻底与服务器完全断开。<br>可以包含很 多个request。所谓当前会话，就是指从用户打开浏览器开始，到用户关闭浏览器这中间的过程。</p>
-</li>
-<li><p>（三）Request：有效域是当前请求周期。所谓请求周期，就是指从http请求发起，到服务器处理结束， 返回<br>响应的整个过程。在这个过程中可能使用forward的方式跳转了多个jsp页面，在这些页面里你都可以 使用这个变量。</p>
-</li>
-<li><p>（四）Page：有效域是当前页面，可以把参数放入PageContext中，只有跳转就失效。</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/29/jsp2/">展开全文 >></a>
         </p>
       
 

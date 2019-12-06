@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="JSP:动态网页 静态和动态的区别与联系：  1.&amp;lt;%@ include file=” ”%&amp;gt;是指令元素。&amp;lt;jsp:include page=” ”/&amp;gt;是行为元素 2.最终编译成java文件的数目不同。（从上面的例子可以看出） 1.静态包含在转换成为java文件的时候将包含文件的内容“复制”到主体文件，然后作为一个整体编译。最终编译为一个java文件。 2.动态包含是各个j">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/06/jsp12/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JSP:动态网页 静态和动态的区别与联系：  1.&amp;lt;%@ include file=” ”%&amp;gt;是指令元素。&amp;lt;jsp:include page=” ”/&amp;gt;是行为元素 2.最终编译成java文件的数目不同。（从上面的例子可以看出） 1.静态包含在转换成为java文件的时候将包含文件的内容“复制”到主体文件，然后作为一个整体编译。最终编译为一个java文件。 2.动态包含是各个j">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-06T02:46:31.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="JSP:动态网页 静态和动态的区别与联系：  1.&amp;lt;%@ include file=” ”%&amp;gt;是指令元素。&amp;lt;jsp:include page=” ”/&amp;gt;是行为元素 2.最终编译成java文件的数目不同。（从上面的例子可以看出） 1.静态包含在转换成为java文件的时候将包含文件的内容“复制”到主体文件，然后作为一个整体编译。最终编译为一个java文件。 2.动态包含是各个j">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,121 +154,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jsp12" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP-动态网页"><a href="#JSP-动态网页" class="headerlink" title="JSP:动态网页"></a>JSP:动态网页</h1><ul>
+<li>静态和动态的区别与联系：</li>
+</ul>
+<p>1.&lt;%@ include file=” ”%&gt;是指令元素。&lt;jsp:include page=” ”/&gt;是行为元素</p>
+<p>2.最终编译成java文件的数目不同。（从上面的例子可以看出）</p>
+<p>1.静态包含在转换成为java文件的时候将包含文件的内容“复制”到主体文件，然后作为一个整体编译。最终编译为一个java文件。</p>
+<p>2.动态包含是各个jsp文件分别转换，分别编译。最终编程成多个java文件。</p>
+<p>3.执行时间不同</p>
+<blockquote>
+<p>静态包含发生在：JSP—-&gt;java文件阶段。</p>
+</blockquote>
+<blockquote>
+<p>动态包含发生在：执行class文件阶段。动态加入。</p>
+</blockquote>
+<p>4.静态包含在两个文件中不能有相同的变量，动态包含允许。</p>
+<blockquote>
+<p>由于静态包含相当于将包含文件内容直接复制到主体文件中，如果出现相同的变量，就会出现覆盖等问题，导致文件出错。而动态包含相当于调用不同的jsp，变量所在的空间不同，自然不会出现覆盖等现象。</p>
+</blockquote>
+<p>5。无论是动态包含还是静态包含，其request对象都是相同的。也就是同一个request对象。</p>
+<p>6.不同之处</p>
+<blockquote>
+<p>（1）两者格式不同，静态包含：&lt;%@ include file=”文件” %&gt;，而动态包含：<jsp : include page="文件">。 </jsp></p>
+</blockquote>
+<blockquote>
+<p>（2）包含时间不同，静态包含是先将几个文件合并，然后再被编译，缺点就是如果含有相同的标签，会出错。动态包含是页面被请求时编译，将结果放在一个页面。</p>
+</blockquote>
+<blockquote>
+<p>（3）生成的文件不同，静态包含会生成一个包含页面名字的servlet和class文件；而动态包含会各自生成对应的servlet和class文件</p>
+</blockquote>
+<blockquote>
+<p>（4）传递参数不同，动态包含能够传递参数，而静态包含不能 。</p>
+</blockquote>
+<p>7.静态不会随着时间，地点，用户操作而改变，但动态会。</p>
+<h1 id="完全修改jsp复制项目名"><a href="#完全修改jsp复制项目名" class="headerlink" title="完全修改jsp复制项目名"></a>完全修改jsp复制项目名</h1><ul>
+<li>修改这四项:</li>
+</ul>
+<p>eclipse–&gt; 项目 –&gt; 右击 –&gt; 属性 –&gt; Web Project Settings  –&gt; Context root:</p>
+<p>.project—-&gt;    <name>his_v3</name></p>
+<p>.settings–&gt;   org.eclipse.wst.common.component  –&gt; <wb-module deploy-name="his_v3"><br>.settings–&gt;   org.eclipse.wst.common.component  –&gt; <property name="context-root" value="his_v3"></property></wb-module></p>
+<pre><code>java.sql.SQLException: The server time zone value  数据库连接错误</code></pre><p>static final String URL = “jdbc:mysql://localhost:3306/hisuseUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT”;</p>
+<pre><code>jsp页面跳转 request等对象传值容易出现空指针异常,此时应注意是否赋值过</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/jsp2/" class="archive-article-date">
-  	<time datetime="2019-10-29T01:03:19.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/06/jsp12/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/jsp/" class="archive-article-date">
-  	<time datetime="2019-10-21T10:19:45.729Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/我要成功我就要成功我成功了哈哈哈哈/" class="archive-article-date">
-  	<time datetime="2019-10-10T14:40:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/我要成功我就要成功我成功了哈哈哈哈/">我要成功我就要成功我成功了哈哈哈哈</a>
-    </h1>
+  
+    <a href="/2019/11/29/jsp11/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MYSQL分页</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T13:46:37.003Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -288,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
