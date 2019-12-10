@@ -157,16 +157,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSP�W����o���"><a href="#JSP�W����o���" class="headerlink" title="JSP�Ŵ����ö���"></a>JSP�Ŵ����ö���</h1><p>JSP��һ��Ԥ�ȶ�����9�������Ķ��󣬷ֱ�Ϊ��<br>request��response��session��application��out��pageContext��config��page��exception</p>
-<p>1��request����<br>request ������ javax.servlet.httpServletRequest���͵Ķ��� �ö�������˿ͻ��˵�������Ϣ����Ҫ���ڽ���ͨ��HTTPЭ�鴫�͵������������ݡ�������ͷ��Ϣ��ϵͳ��Ϣ������ʽ�Լ���������ȣ���request�����������Ϊһ������</p>
-<p>2��response����<br>response �������ǶԿͻ��˵���Ӧ����Ҫ�ǽ�JSP�����������Ķ��󴫻ص��ͻ��ˡ�response����Ҳ������������ֻ��JSPҳ������Ч��</p>
-<p>3��session����<br>session �������ɷ������Զ����������û�������صĶ��󡣷�����Ϊÿ���û�������һ��session�������ڱ�����û�����Ϣ�������û��Ĳ���״̬��session�����ڲ�ʹ��Map�����������ݣ���˱������ݵĸ�ʽΪ ��Key/value���� session�����value����ʹ���ӵĶ������ͣ����������������ַ������͡�</p>
-<p>4��application����<br>application ����ɽ���Ϣ�����ڷ������У�ֱ���������رգ�����application�����б������Ϣ��������Ӧ���ж���Ч����session������ȣ�application�����������ڸ�����������ϵͳ�ġ�ȫ�ֱ�������</p>
-<p>5��out ����<br>out ����������Web������������Ϣ�����ҹ���Ӧ�÷������ϵ��������������ʹ�� out �����������ʱ�����Զ����ݻ��������в�������ʱ����������еĲ������ݣ�Ϊ����������ó�����ռ䡣�����������Ϻ�Ҫ��ʱ�ر��������</p>
-<p>6��pageContext ����<br>pageContext �����������ȡ���κη�Χ�Ĳ�����ͨ�������Ի�ȡ JSPҳ���out��request��reponse��session��application �ȶ���pageContext����Ĵ����ͳ�ʼ����������������ɵģ���JSPҳ���п���ֱ��ʹ�� pageContext����</p>
-<p>7��config ����<br>config �������Ҫ������ȡ�÷�������������Ϣ��ͨ�� pageConext����� getServletConfig() �������Ի�ȡһ��config���󡣵�һ��Servlet ��ʼ��ʱ��������ĳЩ��Ϣͨ�� config���󴫵ݸ���� Servlet�� �����߿�����web.xml �ļ���ΪӦ�ó��򻷾��е�Servlet�����JSPҳ���ṩ��ʼ��������</p>
-<p>8��page ����<br>page �������JSP������ֻ����JSPҳ���ڲ��ǺϷ��ġ� page�����������ϰ�����ǰ Servlet�ӿ����õı�����������Java����е� this ָ�롣</p>
-<p>9��exception ���� </p>
+        <h1 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h1><p>JSP中一共预先定义了9个这样的对象，分别为：<br>request、response、session、application、out、pageContext、config、page、exception</p>
+<p>1、request对象<br>request 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
+<p>2、response对象<br>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
+<p>3、session对象<br>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
+<p>4、application对象<br>application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
+<p>5、out 对象<br>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
+<p>6、pageContext 对象<br>pageContext 对象的作用是取得任何范围的参数，通过它可以获取 JSP页面的out、request、reponse、session、application 等对象。pageContext对象的创建和初始化都是由容器来完成的，在JSP页面中可以直接使用 pageContext对象。</p>
+<p>7、config 对象<br>config 对象的主要作用是取得服务器的配置信息。通过 pageConext对象的 getServletConfig() 方法可以获取一个config对象。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
+<p>8、page 对象<br>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
+<p>9、exception 对象 </p>
 
       
 
@@ -179,7 +179,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/09/jsp13/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/10/jsp13/">展开全文 >></a>
         </p>
       
 
