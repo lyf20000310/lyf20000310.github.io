@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSP九大内置对象JSP中一共预先定义了9个这样的对象，分别为：request、response、session、application、out、pageContext、config、page、exception 1、request对象request 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送">
+  <meta name="description" content="JSP                                                        2019-12-12 JSP的过滤器  1234图例:                 &amp;lt;-----响应-----      在此处被拦截     &amp;lt;---------响应--------           客户端                        过滤器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2019/12/10/jsp13/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/12/jsp14/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSP九大内置对象JSP中一共预先定义了9个这样的对象，分别为：request、response、session、application、out、pageContext、config、page、exception 1、request对象request 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送">
+<meta property="og:description" content="JSP                                                        2019-12-12 JSP的过滤器  1234图例:                 &amp;lt;-----响应-----      在此处被拦截     &amp;lt;---------响应--------           客户端                        过滤器">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-10T00:00:13.607Z">
+<meta property="og:updated_time" content="2019-12-12T10:44:22.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="JSP九大内置对象JSP中一共预先定义了9个这样的对象，分别为：request、response、session、application、out、pageContext、config、page、exception 1、request对象request 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送">
+<meta name="twitter:description" content="JSP                                                        2019-12-12 JSP的过滤器  1234图例:                 &amp;lt;-----响应-----      在此处被拦截     &amp;lt;---------响应--------           客户端                        过滤器">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,21 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jsp13" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jsp14" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h1><p>JSP中一共预先定义了9个这样的对象，分别为：<br>request、response、session、application、out、pageContext、config、page、exception</p>
-<p>1、request对象<br>request 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
-<p>2、response对象<br>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
-<p>3、session对象<br>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
-<p>4、application对象<br>application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
-<p>5、out 对象<br>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
-<p>6、pageContext 对象<br>pageContext 对象的作用是取得任何范围的参数，通过它可以获取 JSP页面的out、request、reponse、session、application 等对象。pageContext对象的创建和初始化都是由容器来完成的，在JSP页面中可以直接使用 pageContext对象。</p>
-<p>7、config 对象<br>config 对象的主要作用是取得服务器的配置信息。通过 pageConext对象的 getServletConfig() 方法可以获取一个config对象。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
-<p>8、page 对象<br>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
-<p>9、exception 对象 </p>
+        <h1 id="JSP-2019-12-12"><a href="#JSP-2019-12-12" class="headerlink" title="JSP                                                        2019-12-12"></a>JSP                                                        2019-12-12</h1><blockquote>
+<p>JSP的过滤器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">图例:</span><br><span class="line">                 &lt;-----响应-----      在此处被拦截     &lt;---------响应--------</span><br><span class="line">           客户端                        过滤器                               服务器</span><br><span class="line">	             ------请求------&gt;    在此处被拦截     ----------请求--------&gt;</span><br></pre></td></tr></table></figure>
+
+<p>被拦截的请求和响应,只有经过滤器判断通过后,才能继续执行.</p>
+<p>充当过滤器的class(java类)需要实现接口 Filter:</p>
+<p>实现其中的</p>
+<p>init初始化(仅仅在第一次访问时执行一次)</p>
+<p>doFilter(过滤时执行的相应操作)</p>
+<p>destroy销毁(仅仅在关闭服务器时执行一次)</p>
+<blockquote>
+<p>三个方法</p>
+</blockquote>
+<blockquote>
+<p>需要在web.xml中配置才能生效配置流程如下(和配置servlet基本相同):</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;充当过滤器的class全地址&lt;/filter-class&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;</span><br><span class="line">	    /需要被拦截的(servlet请求名,指特定请求)请求名(/*指所有请求)</span><br><span class="line">	   REQUEST    http请求</span><br><span class="line">	   FORWARD    转发请求</span><br><span class="line">	   INCLUDE     request.getRequestDispatcher(&apos;&apos;&apos;).include()  或&lt;jsp:include page=&quot;&quot;&gt;请求</span><br><span class="line">	   ERROR     &lt;error-page&gt;请求</span><br><span class="line">	&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/若用重定向方法跳转,则会被拦截两次 一次访问-重新访问/</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">doFilter方法:</span><br><span class="line">&#123;</span><br><span class="line">请求代码</span><br><span class="line">chian.doFilter(request,response);  </span><br><span class="line">放行equest,response不一定全放行  使servlet中逻辑正常执行后,执行响应代码</span><br><span class="line">响应代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/可多重过滤 过滤器执行顺序 依照web.xml中配置顺序 依次执行/</p>
+</blockquote>
 
       
 
@@ -248,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/10/jsp13/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/12/jsp14/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,17 +279,8 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/12/jsp14/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/06/jsp12/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/12/10/jsp13/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>

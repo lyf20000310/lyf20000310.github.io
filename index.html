@@ -157,49 +157,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><p>2019-12-10</p>
+        <h1 id="JSP-2019-12-12"><a href="#JSP-2019-12-12" class="headerlink" title="JSP                                                        2019-12-12"></a>JSP                                                        2019-12-12</h1><blockquote>
 <p>JSP的过滤器</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">图例:</span><br><span class="line">                 &lt;-----响应-----      在此处被拦截     &lt;---------响应--------</span><br><span class="line">           客户端                        过滤器                               服务器</span><br><span class="line">	             ------请求------&gt;    在此处被拦截     ----------请求--------&gt;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
 <p>被拦截的请求和响应,只有经过滤器判断通过后,才能继续执行.</p>
-<blockquote>
 <p>充当过滤器的class(java类)需要实现接口 Filter:</p>
-<blockquote>
 <p>实现其中的</p>
-<blockquote>
 <p>init初始化(仅仅在第一次访问时执行一次)</p>
-<blockquote>
 <p>doFilter(过滤时执行的相应操作)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
 <p>destroy销毁(仅仅在关闭服务器时执行一次)</p>
+<blockquote>
+<p>三个方法</p>
 </blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ul>
-<li>三个方法</li>
-</ul>
+<blockquote>
 <p>需要在web.xml中配置才能生效配置流程如下(和配置servlet基本相同):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;充当过滤器的class全地址&lt;/filter-class&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;充当过滤器的class全地址&lt;/filter-class&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;中间桥梁名&lt;/filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;</span><br><span class="line">	    /需要被拦截的(servlet请求名,指特定请求)请求名(/*指所有请求)</span><br><span class="line">	   REQUEST    http请求</span><br><span class="line">	   FORWARD    转发请求</span><br><span class="line">	   INCLUDE     request.getRequestDispatcher(&apos;&apos;&apos;).include()  或&lt;jsp:include page=&quot;&quot;&gt;请求</span><br><span class="line">	   ERROR     &lt;error-page&gt;请求</span><br><span class="line">	&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/需要被拦截的(servlet请求名,指特定请求)请求名(/*指所有请求)</span><br><span class="line">	   REQUEST    http请求</span><br><span class="line">	   FORWARD    转发请求</span><br><span class="line">	   INCLUDE     request.getRequestDispatcher(&apos;&apos;&apos;).include()  或&lt;jsp:include page=&quot;&quot;&gt;请求</span><br><span class="line">	   ERROR     &lt;error-page&gt;请求</span><br><span class="line">	&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br><span class="line">/若用重定向方法跳转,则会被拦截两次 一次访问-重新访问/</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>/若用重定向方法跳转,则会被拦截两次 一次访问-重新访问/</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">doFilter方法:</span><br><span class="line">&#123;</span><br><span class="line">请求代码</span><br><span class="line">chian.doFilter(request,response);  </span><br><span class="line">放行equest,response不一定全放行  使servlet中逻辑正常执行后,执行响应代码</span><br><span class="line">响应代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<blockquote>
 <p>/可多重过滤 过滤器执行顺序 依照web.xml中配置顺序 依次执行/</p>
+</blockquote>
 
       
 
@@ -212,7 +196,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/10/jsp14/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/12/jsp14/">展开全文 >></a>
         </p>
       
 
