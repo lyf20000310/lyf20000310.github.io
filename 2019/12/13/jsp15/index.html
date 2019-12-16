@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="JSP2019-12-13JSP面试题汇(一)1.什么是 JSP？ 1答：JavaServer Pages(JSP) 是一项支持动态内容的 Web 网页的开发技术，它可以帮助开发人员通过利用特殊的 JSP 标签在 HTML 页面中插入Java代码，这些标签大部分都是以 &amp;lt;% 和 %&amp;gt; 为开始。  2.使用 JSP 的优点是什么？ 12345答：JSP 提供了如下所列的几个优势：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/13/jsp15/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JSP2019-12-13JSP面试题汇(一)1.什么是 JSP？ 1答：JavaServer Pages(JSP) 是一项支持动态内容的 Web 网页的开发技术，它可以帮助开发人员通过利用特殊的 JSP 标签在 HTML 页面中插入Java代码，这些标签大部分都是以 &amp;lt;% 和 %&amp;gt; 为开始。  2.使用 JSP 的优点是什么？ 12345答：JSP 提供了如下所列的几个优势：">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-12T10:58:40.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="JSP2019-12-13JSP面试题汇(一)1.什么是 JSP？ 1答：JavaServer Pages(JSP) 是一项支持动态内容的 Web 网页的开发技术，它可以帮助开发人员通过利用特殊的 JSP 标签在 HTML 页面中插入Java代码，这些标签大部分都是以 &amp;lt;% 和 %&amp;gt; 为开始。  2.使用 JSP 的优点是什么？ 12345答：JSP 提供了如下所列的几个优势：">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,271 +154,195 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jsp15" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JSP<br>2019-12-13<br>JSP面试题汇(一)<br>1.什么是 JSP？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：JavaServer Pages(JSP) 是一项支持动态内容的 Web 网页的开发技术，它可以帮助开发人员通过利用特殊的 JSP 标签在 HTML 页面中插入Java代码，这些标签大部分都是以 &lt;% 和 %&gt; 为开始。</span><br></pre></td></tr></table></figure>
+
+<p>2.使用 JSP 的优点是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答：JSP 提供了如下所列的几个优势：</span><br><span class="line">    因为 JSP 允许在 HTML页面本身中嵌入动态元素而不是使用一个单独的 CGI 文件，所以性能明显更好一点。</span><br><span class="line">    JSP 在被服务器处理之前总会被编译一次，它不像 CGI/Perl 那样，每一次页面被请求时，服务器都需要加载一个解释器和目标脚本。</span><br><span class="line">    JavaServer Pages 是在 Java Servlets API 之上创建的，所以 JSP 可以像 Servlets那样也可以访问所有强大的企业级的 Java APIs，包括 JDBC，JNDI，EJB，JAXP 等等。</span><br><span class="line">    JSP 页面可以结合 servlets 进行使用，处理业务逻辑，该模型是通过 Java servlet 模板引擎支持的。</span><br></pre></td></tr></table></figure>
+
+<p>3.和 ASP 相比，JSP 的优势是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JSP 的优势是双重的。</span><br><span class="line">首先，动态的部分是用 Java 中编写的，而不是 Visual Basic 或者其他 MS 特定的语言，所以它用来更强大也更容易。</span><br><span class="line">其次，它可以很方便的移植到其他操作系统，并且是非微软 web 服务器。</span><br><span class="line">4、 如何避免`JSP`页面自动生成`Session`对象？为什么要这么做？</span><br><span class="line">a)      &lt;%@ page session=”false”&gt;</span><br><span class="line">b)      在默认情况下，在对一个JSP页面发出请求时，如果session还没建立，JSP页面会自动为请求建立一个Session对象，但是session是比较消耗资源的，如果没有必要保持和使用session，就不应该创建session</span><br></pre></td></tr></table></figure>
+
+<p>5.和单纯的 Servlets 相比，JSP 的优势是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">与通过使用大量的 `println` 语句生成的 `HTML` 相比，`JSP` 在编写（和修改）常规的 HTML上更方便。其他的优点是：</span><br><span class="line">    在 HTML 页面中嵌入 Java 代码。</span><br><span class="line">    跨平台。</span><br><span class="line">    创建数据库驱动的 web 应用程序。</span><br><span class="line">服务器端的编程功能。</span><br></pre></td></tr></table></figure>
+
+<p>6、 自定义标签要继承哪个类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a)      可以继承TagSupport或者BodyTagSuppot，两者的差别是前者适用于没有主题的标签，而后者适用于有主题的标签</span><br><span class="line">b)      若选择TagSupport，可以实现doStartTag和doEndTag这两个方法实现Tag的功能；如果选择继承BodyTagSupport，可以实现doAfterBody这个方法</span><br></pre></td></tr></table></figure>
+
+<p>7.和服务器端包含（SSI）相比，JSP 的优势是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：SSI 只是用于简单的包裹体，而不是用于“真正的”使用表格数据的应用程序，建立数据库连接，等等。</span><br></pre></td></tr></table></figure>
+
+<p>8.和 JavaScript 相比，JSP 的优势是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：JavaScript 可以在客户端生成动态的 HTML，却不能和 web 服务器进行交互来完成复杂的任务，例如数据库的访问和图像处理等等。</span><br></pre></td></tr></table></figure>
+
+<p>9.和静态 HTML 相比，JSP 的优势是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：当然，常规的 HTML 不能包含动态信息。</span><br></pre></td></tr></table></figure>
+
+<p>10.解释一个 JSP 的生命周期。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">答：一个 JSP 的生命周期包含以下步骤：</span><br><span class="line">    编译：当浏览器请求一个 JSP 时，JSP 引擎首先检查是否需要编译这个页面。如果这个页面从来没有被编译过，或者 JSP 在最后一次被编译后已经被修改了，那么 JSP 引擎会编译这个页面。</span><br><span class="line">    编译过程包括三个步骤：</span><br><span class="line">        解析 JSP。</span><br><span class="line">        将 JSP 转换成一个 servlet。</span><br><span class="line">        编译这个 servlet。</span><br><span class="line">    初始化：当一个容器加载一个 JSP 时，在修改任何请求之前会调用 jsInit() 方法。</span><br><span class="line">    执行：无论何时一个浏览器请求一个 JSP 时，这个页面都会被加载并且初始化，JSP 引擎在 JSP 中调用 _jspService() 方法。一个 JSP 的 _jspService() 方法在每一次请求时都会被调用，并且为该请求负责生成响应，该方法还负责生成所有的7个 HTTP 方法的响应，也就是 GET， POST，DELETE 等等。</span><br><span class="line">    清除：当一个 JSP 被一个容器从应用中移除时是 JSP 生命周期的破坏阶段。jspDestroy() 方法相当于 servlets 中的销毁方法。</span><br></pre></td></tr></table></figure>
+
+<p>11.在 JSP 中一个 sciptlet 是什么？它的语法是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：一个 sciptlet 可以包含任意数量的 JAVA 语言的语句、变量或者方法声明，或者在页面脚本语言中有效地表达式。</span><br><span class="line">Scriptlet 的语法如下：</span><br><span class="line">&lt;% code fragment %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>12.什么是 JSP声明？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：一个声明可以声明一个或者多个变量或者方法，这些变量和方法你可以在后面的 JSP 文件中的 Java 代码里使用。你必须在你使用之前在 JSP 文件中定义这些 变量或方法。</span><br><span class="line">&lt;%! declaration; [ declaration; ]+ ... %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>13.什么是 JSP 表达式？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：一个 JSP 表达式元素包含一个被求值的脚本语言表达式，转换成一个字符串，并插入到表达式在 JSP 文件中出现的位置。</span><br><span class="line">根据 Java 语言规范，表达式元素可以包含任何有效地表达式，但是你不能使用一个分号来结束一个表达式。</span><br><span class="line">它的语法是：</span><br><span class="line">&lt;%= expression %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>14.什么是 JSP 注释？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：JSP 注释标记的是 JSP容器忽略的文本或者语句。一个 JSP 注释在你想要隐藏或者“注释掉”你 JSP 页面的一部分时是很有用的。</span><br><span class="line">下面的 JSP 注释的语法：</span><br><span class="line">&lt;%-- This is JSP comment --%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>15.什么是 JSP 指令？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：一个 JSP 指令影响着 servlet 类的总体结构。它通常具有以下形式：</span><br><span class="line">&lt;%@ directive attribute=&quot;value&quot; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>16.指令标签的类型是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：指令标签的类型如下：</span><br><span class="line">    &lt;%@ page ... %&gt; : 定义 page-dependent 属性，例如脚本语言、错误页面、和缓冲需求。</span><br><span class="line">    &lt;%@ include ... %&gt; : 在翻译阶段包含一个文件。</span><br><span class="line">    &lt;%@ taglib ... %&gt; : 声明一个标签库，包含在页面中使用的自定义动作。</span><br></pre></td></tr></table></figure>
+
+<p>17.什么是 JSP 操作？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：JSP 操作使用 XML 语法结构来控制 servlet 引擎的行为。你可以动态插入一个文件、重用 JavaBeans 组件、转发用户到另一个网页，或者为 Java 插件生成 HTML。</span><br><span class="line">它的语法如下：</span><br><span class="line">&lt;jsp:action_name attribute=&quot;value&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>18.一些 JSP 操作的名称？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：jsp:include， jsp:useBean， jsp:setProperty， jsp:getProperty， jsp:forward， jsp:plugin，jsp:element， jsp:attribute， jsp:body， jsp:text</span><br></pre></td></tr></table></figure>
+
+<p>19.什么是 JSP 字面值？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">答：字面值是一些值，例如一个数字或者一个文本字符串，编写程序代码的一部分。JSP 表达式语言定义以下字面值：</span><br><span class="line">    Boolean：真和假</span><br><span class="line">    Integer：同 Java</span><br><span class="line">    Floating point：同 Java</span><br><span class="line">    String：使用单引号和双引号；&quot; is escaped as \&quot;, &apos; is escaped as \&apos;, and \ is escaped as \</span><br><span class="line">    Null:空</span><br></pre></td></tr></table></figure>
+
+<p>20.什么是页面指令？</p>
+<p>```<br>答：<strong>页面</strong>指令用于为属于当前 JSP 页面的容器提供指示。你可能会在你的 JSP 页面的任何位置编写页面指令。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/13/jsp15/" class="archive-article-date">
-  	<time datetime="2019-12-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/13/jsp15/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/12/jsp14/" class="archive-article-date">
-  	<time datetime="2019-12-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/10/jsp13/" class="archive-article-date">
-  	<time datetime="2019-12-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/12/jsp14/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/06/jsp12/" class="archive-article-date">
-  	<time datetime="2019-12-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/29/jsp11/" class="archive-article-date">
-  	<time datetime="2019-11-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/29/jsp11/">MYSQL分页</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/29/jsp10/" class="archive-article-date">
-  	<time datetime="2019-11-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/29/jsp10/">EL表达式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/24/jsp9/" class="archive-article-date">
-  	<time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/24/jsp9/">JSP注销流程梳理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/24/jsp8/" class="archive-article-date">
-  	<time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/24/jsp8/">JSP登录流程梳理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/16/jsp7/" class="archive-article-date">
-  	<time datetime="2019-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/16/jsp7/">通用的  数据库  操作 方法 增删改查</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/15/jsp6/" class="archive-article-date">
-  	<time datetime="2019-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/15/jsp6/">MySQL数据库增删改查SQL语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -438,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
