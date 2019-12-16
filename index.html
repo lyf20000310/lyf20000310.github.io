@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:<br>date: 2019-12-16<br>tags:</p>
+<h1 id="jsp复习汇总"><a href="#jsp复习汇总" class="headerlink" title="jsp复习汇总"></a>jsp复习汇总</h1><p>1.在程序里怎样注册Servlet.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">配置文件添加信息：</span><br><span class="line">Web.xml中创建servlet标签。</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">    &lt;display-name&gt;显示名字&lt;/display-name&gt;</span><br><span class="line">&lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">&lt;servlet-class&gt;项目中包名、类名&lt;/servlet-class&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">&lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;url地址&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br><span class="line">注解的方式：</span><br><span class="line">@WebServlet(“/XXServlet”)</span><br><span class="line">Public class XXServlet extends HttpServlet&#123;&#125;</span><br><span class="line"></span><br><span class="line">2.Request对象的主要方法有哪些？</span><br></pre></td></tr></table></figure>
+
+<p>setAttribute(String name,Object)：设置名字为name的request的参数值<br>getAttribute(String name)：返回由name指定的属性值<br>getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例<br>getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组<br>getCharacterEncoding()：返回请求中的字符编码方式<br>getContentLength()：返回请求的Body的长度<br>实例<br>getInputStream()：返回请求的输入流，用于获得请求中的数据<br>getMethod()：获得客户端向服务器端传送数据的方法<br>getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值<br>getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例<br>getParameterValues(String name)：获得有name指定的参数的所有值<br>getProtocol()：获取客户端向服务器端传送数据所依据的协议名称<br>getQueryString()：获得查询字符串<br>getRequestURI()：获取发出请求字符串的客户端地址<br>getRemoteAddr()：获取客户端的IP地址<br>getRemoteHost()：获取客户端的名字<br>getSession([Boolean create])：返回和请求相关Session<br>getServerName()：获取服务器的名字<br>getServletPath()：获取客户端所请求的脚本文件的路径<br>getServerPort()：获取服务器的端口号<br>removeAttribute(String name)：删除请求中的一个属性</p>
+<p>3.JSP和servlet的区别、共同点、各自应用的范围？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a)      JSP在本质上就是servlet，但两者的创建方式不一样，servlet完全是java程序代码构成擅长于流程控制和事务处理而通过的servlet类生成动态网页；JSP由HTML代码和JSP标签构成，可以方便的编写动态网页</span><br><span class="line">b)      采用Servlet来控制业务流程；用JSP来生成动态网页</span><br><span class="line"></span><br><span class="line">4.JSP中动态INCLUDE与静态INCLUDE的区别？</span><br></pre></td></tr></table></figure>
+
+<p>如果文件仅仅是静态文件，那么这种包含仅仅是把包含文件的内容加到JSP文件中去，但这个被包含文件不会被JSP编译器执行。相反，如果这个被包含文件是动态的文件，那么他将被JSP编译器执行。如果是动态文件还可以用<a href="jsp:param" target="_blank" rel="noopener">jsp:param</a>传递参数</p>
+<p>5.forward（转发）和redirect（重定向）的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a)      forward：requset.getRequsetDispatcher(“/***.jsp”).forward(request,response)</span><br><span class="line">　　  redirect：response.sendRedirect(“/***.jsp”)</span><br><span class="line">b)      forward是服务器端发起的请求；redirect是客户端发起的请求；</span><br><span class="line">c)      forward只有一次请求；redirect会产生2次请求。</span><br><span class="line">d)      forward数据会同时转发过去;redirect数据不会同时传递过去。</span><br><span class="line"></span><br><span class="line">6.request.getAttribute()和request.getParameter()区别</span><br></pre></td></tr></table></figure>
+
+<p>a)      都是HttpServletRequest中的方法，用来传递数据的<br>b)      getParameter（）：响应的是web客户端向web服务端通过点击链接或提交按钮传递数据，代表HTTP请求数据；获取的是post/get传递的参数值<br>　　  getAttribute（）：是获取对象容器中的数据，获取的是session的值<br>c)      getParameter（）：只能得到String类型数据<br>　　  getAttribute（）：可以接受String类型，也可以是对象</p>
+<p>7.什么是cookie？什么是session？session和cookie的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a)      Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，它的过期时间可以任意设置，如果不主动清除，很长一段时间都能保留</span><br><span class="line">b)      Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制，它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库、或者集群中。</span><br><span class="line"></span><br><span class="line">8.JSTL核心库的常用标签</span><br></pre></td></tr></table></figure>
+
+<p>&lt;c:if&gt;标签<br>&lt;c:for&gt;标签<br>&lt;c:choose&gt;标签<br>&lt;c:while&gt;标签<br>&lt;c:test&gt;标签<br>&lt;c:switch&gt;标签 </p>
+<p>9.什么是过滤器？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答：JSP 过滤器是 Java 类，它可以用于 JSP 编程中的以下目的：</span><br><span class="line">    它们在后台访问一个资源之前，拦截来自客户端的请求。</span><br><span class="line">    在它们将响应发送回客户端之前操作来自服务器的响应。</span><br><span class="line"></span><br><span class="line">10.指令标签的类型是什么？</span><br></pre></td></tr></table></figure>
+
+<p>答：指令标签的类型如下：<br>    &lt;%@ page … %&gt; : 定义 page-dependent 属性，例如脚本语言、错误页面、和缓冲需求。<br>    &lt;%@ include … %&gt; : 在翻译阶段包含一个文件。<br>    &lt;%@ taglib … %&gt; : 声明一个标签库，包含在页面中使用的自定义动作。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/jsp16/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -655,6 +724,84 @@ c.JSP隐式对象
 
 
   
+    <article id="post-jsp8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/24/jsp8/">JSP登录流程梳理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/24/jsp8/" class="archive-article-date">
+  	<time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP登录流程梳理"><a href="#JSP登录流程梳理" class="headerlink" title="JSP登录流程梳理"></a>JSP登录流程梳理</h1><ul>
+<li>1.表单提交数据到Servlet的方式</li>
+</ul>
+<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。</p>
+<p>(1)Servlet中的doPost()方法：</p>
+<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
+B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
+C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/不跳转</p>
+<ul>
+<li>2.表单提交数据到JSP的方式</li>
+</ul>
+<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个JSP，在其内进行判定是否登录。</p>
+<p>(1)JSP中的&lt;% %&gt;脚本内容：</p>
+<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
+B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
+C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/重定向到登录JSP页面，为地址栏添加一个属性(response.sendRedirect(“index.jsp?info=”登录失败”))</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/24/jsp8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -757,84 +904,6 @@ session.removeAttribute(&quot;pwd&quot;);
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/24/jsp9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jsp8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/24/jsp8/">JSP登录流程梳理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/24/jsp8/" class="archive-article-date">
-  	<time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JSP登录流程梳理"><a href="#JSP登录流程梳理" class="headerlink" title="JSP登录流程梳理"></a>JSP登录流程梳理</h1><ul>
-<li>1.表单提交数据到Servlet的方式</li>
-</ul>
-<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。</p>
-<p>(1)Servlet中的doPost()方法：</p>
-<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
-B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
-C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/不跳转</p>
-<ul>
-<li>2.表单提交数据到JSP的方式</li>
-</ul>
-<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个JSP，在其内进行判定是否登录。</p>
-<p>(1)JSP中的&lt;% %&gt;脚本内容：</p>
-<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
-B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
-C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/重定向到登录JSP页面，为地址栏添加一个属性(response.sendRedirect(“index.jsp?info=”登录失败”))</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/24/jsp8/">展开全文 >></a>
         </p>
       
 
@@ -1080,135 +1149,6 @@ return null;</code></pre>  }<br>//        finally {<br>//            try {<br>//
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/16/jsp7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jsp6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/15/jsp6/">MySQL数据库增删改查SQL语句</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/15/jsp6/" class="archive-article-date">
-  	<time datetime="2019-11-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、检索数据-select语句"><a href="#一、检索数据-select语句" class="headerlink" title="一、检索数据-select语句"></a>一、检索数据-select语句</h1><p>select prod_name from products;                        #检索单个列</p>
-<p>select prod_id,prod_name,prod_price from products;         #检索多个列</p>
-<p>select * from products;#检索所有列</p>
-<p>select distinct vend_id from products;                 #选择不同的值，注意distinct作用于所有列而不仅是紧跟在其后的一列</p>
-<p>select prod_name from products<br>limit 5;#返回5行</p>
-<p>select prod_name from products<br>limit 5 offset 5;    #返回从第5行起的5行数据：limit 开始 offset 行数</p>
-<h1 id="二、注释"><a href="#二、注释" class="headerlink" title="二、注释"></a>二、注释</h1><ul>
-<li>行内注释：–注释</li>
-<li>行内注释：#注释</li>
-<li>多行注释：/<em>注释</em>/</li>
-</ul>
-<h1 id="三、排序检索数据"><a href="#三、排序检索数据" class="headerlink" title="三、排序检索数据"></a>三、排序检索数据</h1><p>select prod_name from products<br>order by prod_name;                                             #按单列排序</p>
-<p>select prod_id,prod_price,prod_name from products<br>order by prod_price,prod_name;      #按多个列排序，首先对price排，再对name排，注意仅在多行具有相同的price时才会对name进行排序</p>
-<p>select prod_id,prod_price,prod_name from products<br>order by prod_price desc,prod_name;      #对price降序，name升序，注意desc只应用到直接位于其前面的列名</p>
-<h1 id="四、过滤数据-where子句"><a href="#四、过滤数据-where子句" class="headerlink" title="四、过滤数据-where子句"></a>四、过滤数据-where子句</h1><p>select prod_name,prod_price from products<br>where prod_price&lt;10;           #检查单个值</p>
-<p>where vend_id &lt;&gt;’DLL01’;         #不匹配检查<br>where vend_id !=’DLL01’;</p>
-<p>select prod_name,prod_price from products<br>where prod_price between 5 and 10;        #范围性检查</p>
-<p>select prod_name from products<br>where prod_price is null;            #检查空值</p>
-<p>select prod_id,prod_price,prod_name from products<br>where vend_id=’DLL01’ and prod_price&lt;=4;          #and操作符</p>
-<p>where vend_id=’DLL01’ or vend_id=’BRS01’;        #or操作符</p>
-<p>where vend_id in(‘DLL01’,’BRS01’);         #in操作符，与or等价</p>
-<p>where not vend_id=’DLL01’;                 #not操作符，否定跟在其后的条件，等价于：where vend_id &lt;&gt;’DLL01’</p>
-<p>where prod_name like ‘Fish%’;              #like操作符+%通配符，返回所有以Fish起头的产品</p>
-<p>where prod_name like’%bean bag%’;          #检索包含文本bean bag的值，不管在之前还是之后。</p>
-<p>where prod_name like’F%y’;                 #检索以F起头，以y结尾的所有产品</p>
-<h1 id="五、汇总数据"><a href="#五、汇总数据" class="headerlink" title="五、汇总数据"></a>五、汇总数据</h1><p>select avg(prod_price) as avg_price           #avg()用于求均值，只用于单列，忽略列值为null的行<br>from products;</p>
-<p>select count(*) as num_cust from customers;      #计算表中行的数目，不忽略空值</p>
-<p>select count(cust_email) as num_cust        #计算指定列中具有值的行数，掠过空值<br>from customers;</p>
-<p>select max(prod_price） as max_price        #返回最大价格，忽略空值<br>from products;</p>
-<p>select min(prod_price） as min_price        #返回最低价格，忽略空值<br>from products;</p>
-<p>select sum(quantity) as items_ordered       #求和，忽略空值<br>from orderitems;</p>
-<h1 id="六、分组数据"><a href="#六、分组数据" class="headerlink" title="六、分组数据"></a>六、分组数据</h1><p>select vend_id,count(*) as num_prods<br>from products</p>
-<p>group by vend_id;         #按id进行分组，count对每个id都做一次计数，group by子句必须出现在where子句之后，order by之前<br>group by cust_id<br>having count(*)&gt;=2;#过滤分组</p>
-<h1 id="七、子查询"><a href="#七、子查询" class="headerlink" title="七、子查询"></a>七、子查询</h1><p>select cust_id from orders<br>where order_num in(select order_num from orderitems<br>                   where prod_id=’RGAN01’);        #由内向外执行</p>
-<p>等价于：</p>
-<p>select order_num from orderitems<br>where prod_id=’RGAN01’;</p>
-<p>输出：</p>
-<h2 id="order-num"><a href="#order-num" class="headerlink" title="order_num"></a>order_num</h2><p>20007<br>20008<br>select cust_id from orders<br>where order_num in(20007,20008);</p>
-<h1 id="八、联结表"><a href="#八、联结表" class="headerlink" title="八、联结表"></a>八、联结表</h1><p>#内连接（等值连接）<br>select vend_name,prod_name,prod_price</p>
-<p>from vendors inner join products</p>
-<p>on vendors.vend_id=products.vend_id; </p>
-<p>#连接条件为</p>
-<p>vendors.vend_id=products.vend_id</p>
-<p>等价于：</p>
-<p>select vend_name,prod_name,prod_price<br>from vendors,products<br>where vendors.vend_id=products.vend_id;</p>
-<p>#多表连接</p>
-<p>select prod_name,vend_name,prod_price,quantity</p>
-<p>from oederitems,products,vendors</p>
-<p>where products.vend_id=vendors.vend_id</p>
-<p>and orderitems.prod_id=products.prod_id</p>
-<p>and order_num=20007;</p>
-<p>#自连接</p>
-<p>select c1.cust_id,c1.cust_name,c1.cust_contact</p>
-<p>from customers as c1,customers as c2<br>          #使用表别名<br>where c1.cust_name=c2.cust_name</p>
-<p>and c2.cust_contact=’jim jones’;</p>
-<p>等价于：</p>
-<p>select cust_id,cust_name,cust_contact</p>
-<p>from customers</p>
-<p>where cust_name=</p>
-<p>(select cust_name </p>
-<p> from customers</p>
-<p> where cust_contact=’jim jones’);</p>
-<p>#外连接</p>
-<p>select customers.cust_id,orders.order_num</p>
-<p>from customers left outer join orders</p>
-<p>on customers.cust_id=orders.cust_id; </p>
-<p>#左外连接，left指定from子句左边的表（customers)选择所有行</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/15/jsp6/">展开全文 >></a>
         </p>
       
 

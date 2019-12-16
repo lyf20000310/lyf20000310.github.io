@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JSP登录流程梳理 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSP登录流程梳理 1.表单提交数据到Servlet的方式  整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。 (1)Servlet中的doPost()方法： A.用Request.getParameter(&amp;quot;[input标签的name属性名]&amp;quot;)方法获取登录页面提交过来的表单数据。 B.通过">
+  <meta name="description" content="title:date: 2019-12-16tags: jsp复习汇总1.在程序里怎样注册Servlet. 12345678910111213141516配置文件添加信息：Web.xml中创建servlet标签。&amp;lt;servlet&amp;gt;    &amp;lt;display-name&amp;gt;显示名字&amp;lt;/display-name&amp;gt;&amp;lt;servlet-name&amp;gt;名字&amp;lt;/se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP登录流程梳理">
-<meta property="og:url" content="http://yoursite.com/2019/11/24/jsp8/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/12/16/jsp16/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSP登录流程梳理 1.表单提交数据到Servlet的方式  整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。 (1)Servlet中的doPost()方法： A.用Request.getParameter(&amp;quot;[input标签的name属性名]&amp;quot;)方法获取登录页面提交过来的表单数据。 B.通过">
+<meta property="og:description" content="title:date: 2019-12-16tags: jsp复习汇总1.在程序里怎样注册Servlet. 12345678910111213141516配置文件添加信息：Web.xml中创建servlet标签。&amp;lt;servlet&amp;gt;    &amp;lt;display-name&amp;gt;显示名字&amp;lt;/display-name&amp;gt;&amp;lt;servlet-name&amp;gt;名字&amp;lt;/se">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-24T10:35:34.648Z">
+<meta property="og:updated_time" content="2019-12-16T00:47:16.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP登录流程梳理">
-<meta name="twitter:description" content="JSP登录流程梳理 1.表单提交数据到Servlet的方式  整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。 (1)Servlet中的doPost()方法： A.用Request.getParameter(&amp;quot;[input标签的name属性名]&amp;quot;)方法获取登录页面提交过来的表单数据。 B.通过">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title:date: 2019-12-16tags: jsp复习汇总1.在程序里怎样注册Servlet. 12345678910111213141516配置文件添加信息：Web.xml中创建servlet标签。&amp;lt;servlet&amp;gt;    &amp;lt;display-name&amp;gt;显示名字&amp;lt;/display-name&amp;gt;&amp;lt;servlet-name&amp;gt;名字&amp;lt;/se">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,42 +154,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jsp8" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jsp16" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JSP登录流程梳理
-    </h1>
-  
-
-        
-        <a href="/2019/11/24/jsp8/" class="archive-article-date">
-  	<time datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JSP登录流程梳理"><a href="#JSP登录流程梳理" class="headerlink" title="JSP登录流程梳理"></a>JSP登录流程梳理</h1><ul>
-<li>1.表单提交数据到Servlet的方式</li>
-</ul>
-<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个Servlet，在其内进行判定是否登录。</p>
-<p>(1)Servlet中的doPost()方法：</p>
-<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
-B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
-C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/不跳转</p>
-<ul>
-<li>2.表单提交数据到JSP的方式</li>
-</ul>
-<p>整体流程：登录页面提交form表单(get或post方式到action指定的位置)的数据到一个JSP，在其内进行判定是否登录。</p>
-<p>(1)JSP中的&lt;% %&gt;脚本内容：</p>
-<pre><code>A.用Request.getParameter(&quot;[input标签的name属性名]&quot;)方法获取登录页面提交过来的表单数据。
-B.通过sql的JDBC的Jar包导入，进行数据库连接(连接代码见以往的连接代码)，用sql(类似于select * from user where id =&apos;&apos;, pwd=&apos;&apos;;)查询语句。
-C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;重定向&quot;两种方式取其一)。</code></pre><p>(2)跳转到的页面：登录成功页面(在Session中保存用户信息)/重定向到登录JSP页面，为地址栏添加一个属性(response.sendRedirect(“index.jsp?info=”登录失败”))</p>
+        <hr>
+<p>title:<br>date: 2019-12-16<br>tags:</p>
+<h1 id="jsp复习汇总"><a href="#jsp复习汇总" class="headerlink" title="jsp复习汇总"></a>jsp复习汇总</h1><p>1.在程序里怎样注册Servlet.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">配置文件添加信息：</span><br><span class="line">Web.xml中创建servlet标签。</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">    &lt;display-name&gt;显示名字&lt;/display-name&gt;</span><br><span class="line">&lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">&lt;servlet-class&gt;项目中包名、类名&lt;/servlet-class&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">&lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;url地址&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br><span class="line">注解的方式：</span><br><span class="line">@WebServlet(“/XXServlet”)</span><br><span class="line">Public class XXServlet extends HttpServlet&#123;&#125;</span><br><span class="line"></span><br><span class="line">2.Request对象的主要方法有哪些？</span><br></pre></td></tr></table></figure>
+
+<p>setAttribute(String name,Object)：设置名字为name的request的参数值<br>getAttribute(String name)：返回由name指定的属性值<br>getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例<br>getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组<br>getCharacterEncoding()：返回请求中的字符编码方式<br>getContentLength()：返回请求的Body的长度<br>实例<br>getInputStream()：返回请求的输入流，用于获得请求中的数据<br>getMethod()：获得客户端向服务器端传送数据的方法<br>getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值<br>getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例<br>getParameterValues(String name)：获得有name指定的参数的所有值<br>getProtocol()：获取客户端向服务器端传送数据所依据的协议名称<br>getQueryString()：获得查询字符串<br>getRequestURI()：获取发出请求字符串的客户端地址<br>getRemoteAddr()：获取客户端的IP地址<br>getRemoteHost()：获取客户端的名字<br>getSession([Boolean create])：返回和请求相关Session<br>getServerName()：获取服务器的名字<br>getServletPath()：获取客户端所请求的脚本文件的路径<br>getServerPort()：获取服务器的端口号<br>removeAttribute(String name)：删除请求中的一个属性</p>
+<p>3.JSP和servlet的区别、共同点、各自应用的范围？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a)      JSP在本质上就是servlet，但两者的创建方式不一样，servlet完全是java程序代码构成擅长于流程控制和事务处理而通过的servlet类生成动态网页；JSP由HTML代码和JSP标签构成，可以方便的编写动态网页</span><br><span class="line">b)      采用Servlet来控制业务流程；用JSP来生成动态网页</span><br><span class="line"></span><br><span class="line">4.JSP中动态INCLUDE与静态INCLUDE的区别？</span><br></pre></td></tr></table></figure>
+
+<p>如果文件仅仅是静态文件，那么这种包含仅仅是把包含文件的内容加到JSP文件中去，但这个被包含文件不会被JSP编译器执行。相反，如果这个被包含文件是动态的文件，那么他将被JSP编译器执行。如果是动态文件还可以用<a href="jsp:param" target="_blank" rel="noopener">jsp:param</a>传递参数</p>
+<p>5.forward（转发）和redirect（重定向）的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a)      forward：requset.getRequsetDispatcher(“/***.jsp”).forward(request,response)</span><br><span class="line">　　  redirect：response.sendRedirect(“/***.jsp”)</span><br><span class="line">b)      forward是服务器端发起的请求；redirect是客户端发起的请求；</span><br><span class="line">c)      forward只有一次请求；redirect会产生2次请求。</span><br><span class="line">d)      forward数据会同时转发过去;redirect数据不会同时传递过去。</span><br><span class="line"></span><br><span class="line">6.request.getAttribute()和request.getParameter()区别</span><br></pre></td></tr></table></figure>
+
+<p>a)      都是HttpServletRequest中的方法，用来传递数据的<br>b)      getParameter（）：响应的是web客户端向web服务端通过点击链接或提交按钮传递数据，代表HTTP请求数据；获取的是post/get传递的参数值<br>　　  getAttribute（）：是获取对象容器中的数据，获取的是session的值<br>c)      getParameter（）：只能得到String类型数据<br>　　  getAttribute（）：可以接受String类型，也可以是对象</p>
+<p>7.什么是cookie？什么是session？session和cookie的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a)      Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，它的过期时间可以任意设置，如果不主动清除，很长一段时间都能保留</span><br><span class="line">b)      Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制，它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库、或者集群中。</span><br><span class="line"></span><br><span class="line">8.JSTL核心库的常用标签</span><br></pre></td></tr></table></figure>
+
+<p>&lt;c:if&gt;标签<br>&lt;c:for&gt;标签<br>&lt;c:choose&gt;标签<br>&lt;c:while&gt;标签<br>&lt;c:test&gt;标签<br>&lt;c:switch&gt;标签 </p>
+<p>9.什么是过滤器？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答：JSP 过滤器是 Java 类，它可以用于 JSP 编程中的以下目的：</span><br><span class="line">    它们在后台访问一个资源之前，拦截来自客户端的请求。</span><br><span class="line">    在它们将响应发送回客户端之前操作来自服务器的响应。</span><br><span class="line"></span><br><span class="line">10.指令标签的类型是什么？</span><br></pre></td></tr></table></figure>
+
+<p>答：指令标签的类型如下：<br>    &lt;%@ page … %&gt; : 定义 page-dependent 属性，例如脚本语言、错误页面、和缓冲需求。<br>    &lt;%@ include … %&gt; : 在翻译阶段包含一个文件。<br>    &lt;%@ taglib … %&gt; : 声明一个标签库，包含在页面中使用的自定义动作。</p>
 
       
 
@@ -269,7 +260,7 @@ C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/24/jsp8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/16/jsp16/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +274,9 @@ C.比对判定以上两项的数据，页面跳转(&quot;转发&quot;和&quot;�
   
 <nav id="article-nav">
   
-    <a href="/2019/11/29/jsp10/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          EL表达式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/24/jsp9/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JSP注销流程梳理</div>
+    <a href="/2019/12/13/jsp15/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
